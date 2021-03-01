@@ -39,7 +39,7 @@ module.exports = () => {
       .showMessageBox({
         type: "info",
         title: "Update spreman",
-        message: "Instaliraj i restartuj aplikacijeu sad?",
+        message: "Instaliraj i restartuj aplikaciju sad?",
         buttons: ["Da", "Kasnije"],
       })
       .then((result) => {
