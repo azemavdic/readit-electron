@@ -1,6 +1,6 @@
 {
   "name": "readit",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Čitaj na dlanu",
   "main": "main.js",
   "scripts": {
