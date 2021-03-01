@@ -32,6 +32,26 @@ module.exports = () => {
         if (buttonIndex === 0) autoUpdater.downloadUpdate();
       });
   });
+
+  //Download progress
+  autoUpdater.on(" download-progress", (progress) => {
+    let log_message = `Brzina preuzimanja ${progress.bytesPerSecond}`;
+    log_message = `${log_message} - preuzeto ${progress.percent}%`;
+    log_message =
+      log_message +
+      " (" +
+      progressObj.transferred +
+      "/" +
+      progressObj.total +
+      ")";
+    sendStatusToWindow(log_message);
+  });
+
+  function sendStatusToWindow(text) {
+    autoUpdater.logger.info(text);
+    homePageWindow.webContents.send("message", text);
+  }
+
   //listen for update downloaded
   autoUpdater.on("update-downloaded", () => {
     //Pitaj korisnika za instalaciju update
