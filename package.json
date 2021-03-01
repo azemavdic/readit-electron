@@ -1,6 +1,6 @@
 {
   "name": "readit",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Čitaj na dlanu",
   "main": "main.js",
   "scripts": {
@@ -12,6 +12,7 @@
     "win-cert": "electron-builder create-self-signed-cert azemavdic"
   },
   "repository": "https://github.com/azemavdic/readit-electron",
+  "homepage": "https://github.com/azemavdic/readit-electron",
   "keywords": [
     "Electron",
     "Master Electron",
@@ -20,10 +21,13 @@
   "author": "Azem Avdic",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^9.0.0",
+    "electron": "^9.4.3",
+    "electron-builder": "^22.9.1",
     "nodemon": "^2.0.0"
   },
   "dependencies": {
+    "electron-log": "^4.3.2",
+    "electron-updater": "^4.3.5",
     "electron-window-state": "^5.0.3"
   },
   "build": {
@@ -31,14 +35,15 @@
     "copyright": "Copyright Azem Avdic",
     "publish": {
       "provider": "github"
+    },
+    "mac": {
+      "category": "public.app-category.productivity"
+    },
+    "win": {
+      "certificateFile": "private/azemavdic.pfx",
+      "certificatePassword": "",
+      "publisherName": "azemavdic",
+      "verifyUpdateCodeSignature": false
     }
-  },
-  "mac": {
-    "category": "public.app-category.productivity"
-  },
-  "win": {
-    "certificateFile": "private/azemavdic.pfx",
-    "certificatePassword": "",
-    "publisherName": "azemavdic"
   }
 }
